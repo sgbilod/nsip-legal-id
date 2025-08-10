@@ -34,10 +34,12 @@ jobs:
       
       - name: Enable Copilot
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.NSIP_COPILOT_NEW_WORKFLOW_TOKEN }}
+          COPILOT_TOKEN: ${{ secrets.NSIP_COPILOT_NEW_WORKFLOW_TOKEN }}
         run: |
           echo "Setting up Copilot environment"
           echo "COPILOT_ENABLED=true" >> $GITHUB_ENV
+          git config --global url."https://${{ secrets.NSIP_COPILOT_NEW_WORKFLOW_TOKEN }}@github.com/".insteadOf "https://github.com/"
           
       - name: Build and Test
         run: |
@@ -54,7 +56,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.NSIP_COPILOT_NEW_WORKFLOW_TOKEN }}
           commit-message: "feat: copilot autonomous implementation"
           branch: copilot/auto-implementation
           title: "Copilot: Autonomous Implementation"
