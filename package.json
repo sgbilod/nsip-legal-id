@@ -3,9 +3,14 @@
   "displayName": "NSIP Legal/Business IDE",
   "description": "Advanced VS Code extension for legal document creation, analysis, and compliance",
   "version": "0.1.0",
+  "private": false,
   "author": {
     "name": "Stephen Bilodeau",
     "email": "stephen.bilodeau@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sgbilod/nsip-legal-id.git"
   },
   "dependencies": {
     "ethers": "^5.7.2",
