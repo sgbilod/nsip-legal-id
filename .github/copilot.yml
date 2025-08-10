@@ -1,11 +1,17 @@
 version: 1
 enabled: true
 enabledForRepo: true
+organization: nsip-legal-dev
 features:
   autonomousDevelopment: true
   codeReview: true
   pullRequests: true
   suggestions: true
+  autoAssign: true
+security:
+  trustedBots:
+    - github-copilot[bot]
+    - github-copilot-support[bot]
 modelPreferences:
   - OpenAI GPT-5
   - Claude Opus 4.1
