@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+    inputs:
+      use_copilot:
+        description: 'Enable Copilot automation'
+        required: true
+        default: true
+        type: boolean
 
 permissions:
   contents: write
